@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <!--- icons boxicons-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Admin Dashboard Styles */
+        .admin-trigger { color: #fff; margin-left: 15px; cursor: pointer; font-size: 1.6rem; vertical-align: middle; display: inline-block; }
+        .admin-trigger:hover { color: #0ef; transform: scale(1.1); transition: .3s; }
+        .admin-modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px); }
+        .admin-content { background-color: #1f242d; margin: 5% auto; padding: 30px; border: 2px solid #0ef; width: 90%; max-width: 600px; border-radius: 10px; color: #fff; position: relative; box-shadow: 0 0 20px rgba(0,238,255,0.3); }
+        .close-admin { color: #fff; float: right; font-size: 28px; font-weight: bold; cursor: pointer; transition: .3s; }
+        .close-admin:hover { color: #0ef; }
+        .admin-tabs { display: flex; gap: 15px; margin-bottom: 20px; border-bottom: 1px solid #323946; padding-bottom: 10px; }
+        .tab-btn { background: transparent; border: none; color: #fff; cursor: pointer; padding: 10px; font-size: 1.6rem; font-weight: 600; transition: 0.3s; font-family: 'Poppins', sans-serif; }
+        .tab-btn.active { color: #0ef; border-bottom: 2px solid #0ef; }
+        .tab-content { display: none; animation: fadeIn 0.5s; }
+        .tab-content.active { display: block; }
+        .admin-form .input-box { margin-bottom: 15px; }
+        .admin-form label { display: block; margin-bottom: 8px; color: #0ef; font-size: 1.4rem; }
+        .admin-form input, .admin-form textarea, .admin-form select { width: 100%; padding: 12px; background: #323946; border: none; border-radius: 8px; color: #fff; font-size: 1.4rem; font-family: 'Poppins', sans-serif; }
+        .admin-form .btn { margin-top: 10px; width: 100%; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+<header class="header">
+<a href="#" class="logo">Portfolio</a>
+<!---icon here-->
+<i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#Services">Services</a>
+            <a href="#blog">Blog</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">contact</a>
+        </nav>
+    </header>
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, I'm </h3>
+            <h1>Prestone chooye</h1>
+            <h3>a <span class="reveal-text">Frontend developer and Graphic designer</span></h3>
+            <p> and Tech enthusiast,passionate about crafting clean,engaging designs<br> and websites for individual and business</p>
+            <div class="social-media">
+                <a href="#"><i class='bx bxl-facebook' ></i></a>
+                <a href="#"><i class='bx bxl-whatsapp' ></i></a>
+                <a href="#"><i class='bx bxl-linkedin' ></i></a>
+                <a href="#"><i class='bx bxl-instagram' ></i>
+            </div>
+            <a href="MY CV.pdf" download class="btn">Download CV</a>
+        </div>
+        <div class="home-img">
+            <img src="images/PREST.jpg" alt="">
+        </div>
+    </section>
+    <!-- Blog section -->
+    <section class="blog" id="blog">
+        <h2 class="heading">Blog <span>Latest</span></h2>
+        <div class="blog-container">
+            <article class="blog-card">
+                <img src="images/Personal portfolio.jpg" alt="Post image">
+                <div class="card-body">
+                    <div class="meta">Jan 3, 2026 • 3 min read</div>
+                    <h3>How I built a responsive portfolio</h3>
+                    <p>In this post I explain the steps I took to create a modern responsive portfolio with animations and accessibility in mind.</p>
+                    <a class="read-more" href="#">Read more</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="images/9 Most Common.jpg" alt="Post image">
+                <div class="card-body">
+                    <div class="meta">Dec 15, 2025 • 4 min read</div>
+                    <h3>Design tips for better landing pages</h3>
+                    <p>Simple design decisions can drastically improve conversions. Here are practical tips you can apply today.</p>
+                    <a class="read-more" href="#">Read more</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="images/10 Programming L.jpg" alt="Post image">
+                <div class="card-body">
+                    <div class="meta">Nov 2, 2025 • 5 min read</div>
+                    <h3>Getting started with modern JavaScript</h3>
+                    <p>A short guide on modern JS features and tooling to help you ship faster and write cleaner code.</p>
+                    <a class="read-more" href="#">Read more</a>
+                </div>
+            </article>
+        </div>
+    </section>
+    <!-- Skills section -->
+    <section class="skills" id="skills">
+        <h2 class="heading">Skills <span>Overview</span></h2>
+        <div class="skills-container">
+            <div class="skill">
+                <div class="skill-header">
+                    <span>HTML</span>
+                    <span class="percent">90%</span>
+                </div>
+                <div class="progress">
+                    <div class="bar" data-percent="90%" style="width:0"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-header">
+                    <span>CSS</span>
+                    <span class="percent">85%</span>
+                </div>
+                <div class="progress">
+                    <div class="bar" data-percent="85%" style="width:0"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-header">
+                    <span>MS OFFICE</span>
+                    <span class="percent">100%</span>
+                </div>
+                <div class="progress">
+                    <div class="bar" data-percent="100%" style="width:0"></div>
+                </div>
+            </div>
+
+
+            <div class="skill">
+                <div class="skill-header">
+                    <span>JavaScript</span>
+                    <span class="percent">80%</span>
+                </div>
+                <div class="progress">
+                    <div class="bar" data-percent="80%" style="width:0"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-header">
+                    <span>PHP</span>
+                    <span class="percent">50%</span>
+                </div>
+                <div class="progress">
+                    <div class="bar" data-percent="70%" style="width:0"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-header">
+                    <span>Adobe Photoshop</span>
+                    <span class="percent">60%</span>
+                </div>
+                <div class="progress">
+                    <div class="bar" data-percent="75%" style="width:0"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-header">
+                    <span>Pixellab</span>
+                    <span class="percent">90%</span>
+                </div>
+                <div class="progress">
+                    <div class="bar" data-percent="90%" style="width:0"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-header">
+                    <span>Canva</span>
+                    <span class="percent">70%</span>
+                </div>
+                <div class="progress">
+                    <div class="bar" data-percent="70%" style="width:0"></div>
+                </div>
+            </div>
+
+        </div>
+
+        
+
+        
+    </section>
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="images/ME (1).jpg">
+        </div>
+<div class="about-content">
+    <h2 class="heading">
+        About <span>Me</span>
+    </h2>
+    <h3>Frontend developer|IT technician|system Admin|Graphic designer</h3>
+    <p>
+        Well skilled person.... 
+        <span class="more-text" style="display: none;">
+            I have experience in creating responsive websites, managing IT systems, and designing graphics that align with client needs. My passion lies in delivering high-quality solutions.
+        </span>
+    </p>
+    <a href="#" class="btn read-more-btn">Read more</a>
+</div>
+    </section>
+    <!-- Education section -->
+    <section class="education" id="education">
+        <h2 class="heading">Education <span>Background</span></h2>
+        <div class="education-container">
+            <div class="edu-item">
+                <div class="edu-left">
+                    <div class="edu-year">2024 - 2025</div>
+                </div>
+                <div class="edu-right">
+                    <h3 class="edu-degree">D.IT.In  Information technology</h3>
+                    <div class="edu-school">Evelyn Hone College</div>
+                    <p class="edu-desc">Focused on web development, computer security, computer networks, system analysis and  design, manangement infromation system and interactive design. Graduated with honours and completed multiple projects in front-end development.</p>
+                </div>
+            </div>
+
+            <div class="edu-item">
+                <div class="edu-left">
+                    <div class="edu-year">2025</div>
+                </div>
+                <div class="edu-right">
+                    <h3 class="edu-degree"> Graphic Design</h3>
+                    <div class="edu-school">Cisco network academy</div>
+                    <p class="edu-desc">Learned visual design principles, typography, and advanced Photoshop techniques used in professional projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="Services" id="Services">
+        <h2 class="heading">My<span>Services</span></h2>
+        <div class="services-container">
+            <div class="services-box">
+                <i class='bx bx-code-alt'></i>
+                <h3>Web development</h3>
+                <p>I develop user-friendly websites at a personal interest.</p>
+                <div class="full-content" id="service-1" style="display: none;">
+                    <p>My web development services include creating responsive, accessible, and modern websites tailored to your needs.</p>
+                </div>
+                <a href="#" class="btn read-more" data-target="service-1">Read more</a>
+            </div>
+
+            <div class="services-box">
+                <i class='bx bx-palette'></i>
+                <h3>Graphic design</h3>
+                <p>My designs are excellent and professional.</p>
+                <div class="full-content" id="service-2" style="display: none;">
+                    <p>I specialize in creating visually appealing designs, including logos, posters, and branding materials.</p>
+                </div>
+                <a href="#" class="btn read-more" data-target="service-2">Read more</a>
+            </div>
+
+            <div class="services-box">
+                <i class='bx bx-code'></i>
+                <h3>Coding lessons</h3>
+                <p>Gain technology skills through my coding lessons.</p>
+                <div class="full-content" id="service-3" style="display: none;">
+                    <p>I offer personalized coding lessons to help you master programming languages and build real-world projects.</p>
+                </div>
+                <a href="#" class="btn read-more" data-target="service-3">Read more</a>
+            </div>
+
+            <div class="services-box">
+                <i class='bx bx-line-chart'></i>
+                <h3>Digital marketing</h3>
+                <p>I help make businesses visible to customers through social media marketing.</p>
+                <div class="full-content" id="service-4" style="display: none;">
+                    <p>My digital marketing services include SEO, social media campaigns, and content creation to boost your online presence.</p>
+                </div>
+                <a href="#" class="btn read-more" data-target="service-4">Read more</a>
+            </div>
+        </div>
+    </section>
+    <section class="Portfolio" id="portfolio">
+        <h2 class="heading">Latest <span>Project</span></h2>
+        <div class="Portfolio-container">
+        <div class="portfolio-box">
+            <img src="images/LMS.jpg" alt="">
+            <div class="portfolio-layer">
+                <h4>Web developement</h4>
+                <p>Learning management system</p>
+                <!---icon here-->
+                <a href="https://prestone1999.github.io/edutechzam/" ><i class='bx bx-link-external'> </i></a>
+            </div>
+        </div>
+         <div class="portfolio-box">
+            <img src="images/prestou.jpg" alt="">
+            <div class="portfolio-layer">
+                <h4>Web developement</h4>
+                <p>Tour website</p>
+                <!---icon here-->
+              <a href="https://prestone1999.github.io/prestours/"  ><i class='bx bx-link-external'></i></a>
+            </div>
+        </div>
+         <div class="portfolio-box">
+            <img src="images/post 1 (2).jpg" alt="">
+            <div class="portfolio-layer">
+                <h4>Graphic Design</h4>
+                <p>Poster design </p>
+                <!---icon here-->
+                <i class='bx bx-link-external'></i>
+            </div>
+        </div>
+         <div class="portfolio-box">
+            <img src="images/post 1 (1).jpg" alt="">
+            <div class="portfolio-layer">
+                <h4>Graphic Design</h4>
+                <p> Poster design </p>
+                <!---icon here-->
+                <i class='bx bx-link-external'></i>
+            </div>
+        </div>
+         <div class="portfolio-box">
+            <img src="images/logo.jpg" alt="">
+            <div class="portfolio-layer">
+                <h4>Graphic Design</h4>
+                <p>Logo design</p>
+                <!---icon here-->
+                <i class='bx bx-link-external'></i>
+            </div>
+        </div>
+        <div class="portfolio-box">
+            <img src="images/product.jpg" alt="">
+            <div class="portfolio-layer">
+                <h4>Graphic Design</h4>
+                <p>product branding</p>
+                <!---icon here-->
+                <i class='bx bx-link-external'></i>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me!</span></h2>
+
+
+        <form action="">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email address">
+            </div>
+             <div class="input-box">
+                <input type="number" placeholder="Mobile Number">
+                <input type="text" placeholder="Email subject">
+               
+            </div>
+             <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+                <input type="submit" value="Send Message" class="btn">
+        </form>
+        
+    </section>
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2026 by code with prestone|All Right Reserved.</p>
+            <!-- Admin Trigger Icon -->
+            <span id="adminBtn" class="admin-trigger" title="Admin Login"><i class='bx bxs-lock-alt'></i></span>
+            <div class="footer-iconTop">
+                <a href="#home"> <i class='bx bxs-up-arrow-square'></i></a>
+            </div>
+        </div>
+    </footer>
+    <!-- WhatsApp quick-reply floating button -->
+    <!-- Replace with your phone number in international format (no '+' or dashes) -->
+    <a class="whatsapp-float" href="https://wa.me/+260977740133?text=Hi%20Prestone%2C%20I'm%20interested%20in%20your%20services" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <i class='bx bxl-whatsapp'></i>
+    </a>
+
+    <!-- Admin Dashboard Modal -->
+    <div id="adminModal" class="admin-modal">
+        <div class="admin-content">
+            <span class="close-admin">&times;</span>
+            <h2 class="heading" style="font-size: 2.5rem; text-align: left; margin-bottom: 1rem;">Admin <span>Dashboard</span></h2>
+            
+            <div class="admin-tabs">
+                <button class="tab-btn active" data-tab="tab-details">Update Details</button>
+                <button class="tab-btn" data-tab="tab-blog">Post Blog</button>
+                <button class="tab-btn" data-tab="tab-project">Post Project</button>
+                <button class="tab-btn" data-tab="tab-service">Add Service</button>
+            </div>
+
+            <!-- Tab 1: Update Details -->
+            <div id="tab-details" class="tab-content active">
+                <form class="admin-form">
+                    <div class="input-box"><label>Full Name</label><input type="text" placeholder="Prestone chooye"></div>
+                    <div class="input-box"><label>Titles (comma separated)</label><input type="text" placeholder="Frontend developer, Graphic designer"></div>
+                    <div class="input-box"><label>About Text</label><textarea rows="4" placeholder="Update about me text..."></textarea></div>
+                    <button type="submit" class="btn">Save Details</button>
+                </form>
+            </div>
+
+            <!-- Tab 2: Post Blog -->
+            <div id="tab-blog" class="tab-content">
+                <form class="admin-form">
+                    <div class="input-box"><label>Blog Title</label><input type="text" placeholder="Enter title"></div>
+                    <div class="input-box"><label>Date</label><input type="date"></div>
+                    <div class="input-box"><label>Image</label><input type="file"></div>
+                    <div class="input-box"><label>Content</label><textarea rows="4" placeholder="Blog content..."></textarea></div>
+                    <button type="submit" class="btn">Publish Blog</button>
+                </form>
+            </div>
+
+            <!-- Tab 3: Post Project -->
+            <div id="tab-project" class="tab-content">
+                <form class="admin-form">
+                    <div class="input-box"><label>Project Title</label><input type="text" placeholder="Project Name"></div>
+                    <div class="input-box"><label>Category</label><select><option>Web Development</option><option>Graphic Design</option></select></div>
+                    <div class="input-box"><label>Image</label><input type="file"></div>
+                    <div class="input-box"><label>Project Link</label><input type="url" placeholder="https://..."></div>
+                    <button type="submit" class="btn">Add Project</button>
+                </form>
+            </div>
+
+            <!-- Tab 4: Add Service -->
+            <div id="tab-service" class="tab-content">
+                <form class="admin-form">
+                    <div class="input-box"><label>Service Title</label><input type="text" placeholder="e.g. Web Development"></div>
+                    <div class="input-box"><label>Icon Class (Boxicons)</label><input type="text" placeholder="e.g. bx bx-code-alt"></div>
+                    <div class="input-box"><label>Short Description</label><textarea rows="2" placeholder="Brief summary..."></textarea></div>
+                    <div class="input-box"><label>Full Description</label><textarea rows="4" placeholder="Detailed description for 'Read More'..."></textarea></div>
+                    <button type="submit" class="btn">Add Service</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let menuIcon= document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
+
+
+    menuIcon.onclick = () =>{
+           // Toggle the icon (switch menu <-> close) and show/hide the navbar
+           menuIcon.classList.toggle('bx-x');
+           navbar.classList.toggle('active');
+    };
+
+       
+        let sections= document.querySelectorAll('section');
+        let navLinks= document.querySelectorAll('header nav a');
+
+        // Prepare typewriter elements: store full text and start empty
+        const allRevealTexts = document.querySelectorAll('.reveal-text');
+        allRevealTexts.forEach(el => {
+            el.dataset.full = el.textContent.trim();
+            el.textContent = '';
+            el.dataset.typed = 'false';
+            el.dataset.typing = 'false';
+            el.setAttribute('aria-live', 'polite');
+        });
+
+        function typeText(el, speed = 40){
+            if(el.dataset.typing === 'true' || el.dataset.typed === 'true') return;
+            el.dataset.typing = 'true';
+            el.classList.add('typing');
+            const full = el.dataset.full || '';
+            let i = 0;
+            const tick = () => {
+                if(i <= full.length){
+                    el.textContent = full.slice(0, i);
+                    i++;
+                    el._typeTimeout = setTimeout(tick, speed);
+                } else {
+                    el.dataset.typing = 'false';
+                    el.dataset.typed = 'true';
+                    el.classList.remove('typing');
+                }
+            };
+            tick();
+        }
+
+        function resetText(el){
+            if(el.dataset.typing === 'true' && el._typeTimeout) clearTimeout(el._typeTimeout);
+            el.dataset.typing = 'false';
+            el.dataset.typed = 'false';
+            el.textContent = '';
+            el.classList.remove('typing');
+        }
+
+        // Animate skill bars in the Skills section
+        function animateSkillBars(section){
+            const bars = section.querySelectorAll('.progress .bar');
+            bars.forEach(bar =>{
+                if(bar.dataset.animated === 'true') return;
+                const target = parseInt(bar.dataset.percent, 10) || 0;
+                bar.dataset.animated = 'true';
+                // animate width
+                bar.style.width = bar.dataset.percent;
+                // animate numeric percent display
+                const percentSpan = bar.closest('.skill').querySelector('.percent');
+                if(percentSpan){
+                    let start = 0;
+                    const duration = 1000; // ms
+                    const stepTime = 12; // ms
+                    const steps = Math.max(1, Math.floor(duration / stepTime));
+                    const step = target / steps;
+                    let current = 0;
+                    percentSpan.textContent = '0%';
+                    bar._skillInterval = setInterval(()=>{
+                        current += step;
+                        if(current >= target){
+                            percentSpan.textContent = target + '%';
+                            clearInterval(bar._skillInterval);
+                        } else {
+                            percentSpan.textContent = Math.round(current) + '%';
+                        }
+                    }, stepTime);
+                }
+            });
+        }
+
+        function resetSkillBars(section){
+            const bars = section.querySelectorAll('.progress .bar');
+            bars.forEach(bar =>{
+                if(bar._skillInterval) clearInterval(bar._skillInterval);
+                bar.dataset.animated = 'false';
+                bar.style.width = '0';
+                const percentSpan = bar.closest('.skill').querySelector('.percent');
+                if(percentSpan) percentSpan.textContent = '0%';
+            });
+        }
+
+        window.onscroll = () =>{
+
+            sections.forEach(sec =>{
+                let top = window.scrollY;
+                let offset = sec.offsetTop -159;
+                let height = sec.offsetHeight;
+                let id = sec.getAttribute('id');
+                 
+                                const headingEl = sec.querySelector('.heading');
+                                const revealEls = sec.querySelectorAll('.reveal-text');
+                                                if(top >= offset && top < offset + height){
+                                    // Remove 'active' from all nav links, then add to the matching one if present
+                                    navLinks.forEach(link => link.classList.remove('active'));
+                                    const activeLink = document.querySelector(`header nav a[href*="${id}"]`);
+                                    if(activeLink){
+                                        activeLink.classList.add('active');
+                                    }
+                                     // Animate the section heading into view
+                                     if(headingEl) headingEl.classList.add('show');
+                                      // Animate any reveal-text elements (like the home subtitle)
+                                      if(revealEls.length) revealEls.forEach(el => { el.classList.add('show'); typeText(el, 40); });
+                                     // Animate skills bars when the Skills section becomes active
+                                     if(id === 'skills') animateSkillBars(sec);
+                                } else {
+                                    // Hide heading when section is not active
+                                     if(headingEl) headingEl.classList.remove('show');
+                                      if(revealEls.length) revealEls.forEach(el => { el.classList.remove('show'); resetText(el); });
+                                     // Reset skills when leaving the Skills section
+                                     if(id === 'skills') resetSkillBars(sec);
+                                }
+            });
+        };
+       
+        let header = document.querySelector('header');
+
+
+         header.classList.toggle('sticky', window.scrollY > 100);  
+
+
+          // Reset menu icon and navbar state when scrolling
+          menuIcon.classList.remove('bx-x');
+          navbar.classList.remove('active');
+         // Run the scroll handler once to initialize active states/animations
+         window.onscroll();
+    
+    document.querySelector('.read-more-btn').addEventListener('click', function(event) {
+        event.preventDefault();
+        const moreText = document.querySelector('.more-text');
+        if (moreText.style.display === 'none') {
+            moreText.style.display = 'inline';
+            this.textContent = 'Read less';
+        } else {
+            moreText.style.display = 'none';
+            this.textContent = 'Read more';
+        }
+    });
+
+    document.querySelectorAll('.read-more').forEach(button => {
+        button.addEventListener('click', event => {
+            event.preventDefault();
+            const targetId = button.getAttribute('data-target');
+            const fullContent = document.getElementById(targetId);
+            if (fullContent.style.display === 'none') {
+                fullContent.style.display = 'block';
+                button.textContent = 'Hide';
+            } else {
+                fullContent.style.display = 'none';
+                button.textContent = 'Read more';
+            }
+        });
+    });
+
+    // Admin Modal Logic
+    const adminModal = document.getElementById('adminModal');
+    const adminBtn = document.getElementById('adminBtn');
+    const closeAdmin = document.querySelector('.close-admin');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    // Open/Close Modal
+    adminBtn.onclick = () => { adminModal.style.display = "block"; }
+    closeAdmin.onclick = () => { adminModal.style.display = "none"; }
+    window.onclick = (event) => { if (event.target == adminModal) { adminModal.style.display = "none"; } }
+
+    // Tab Switching
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById(btn.dataset.tab).classList.add('active');
+        });
+    });
+
+    // Form Submission Placeholder
+    document.querySelectorAll('.admin-form').forEach(form => {
+        form.addEventListener('submit', (e) => { e.preventDefault(); alert('Note: To save this data permanently, you need to connect this form to a backend database (like PHP/MySQL or Node.js).'); });
+    });
+
+    </script>
+    
+</body>
+</html>
